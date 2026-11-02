@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Boneka Triyana</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff0f6;
+    color: #66334d;
+}
+
+header {
+    background: #ed80aa;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 5px;
+}
+
+nav {
+    background: #ffc1d8;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #8c2854;
+    text-decoration: none;
+    margin: 12px;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 55px 15px;
+    background: #ffe0ed;
+}
+
+.hero h1 {
+    color: #d44281;
+    font-size: 35px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+button {
+    background: #e85b96;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #c83270;
+}
+
+h2 {
+    text-align: center;
+    color: #d44281;
+}
+
+.produk {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 25px;
+}
+
+.kartu {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px #e9a9c4;
+}
+
+.kartu img {
+    width: 100%;
+    height: 210px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.kartu h3 {
+    color: #d44281;
+}
+
+#keranjang {
+    background: white;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px #e9a9c4;
+}
+
+#daftar {
+    line-height: 2.5;
+}
+
+#daftar li {
+    margin-bottom: 8px;
+}
+
+.checkout {
+    background: white;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px #e9a9c4;
+}
+
+.checkout h3 {
+    color: #d44281;
+    margin-top: 25px;
+}
+
+.checkout input,
+.checkout textarea,
+.checkout select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #e9b5ca;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+.checkout textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.checkout hr {
+    margin: 25px 0;
+    border: 1px solid #ddd;
+}
+
+.kontak {
+    background: white;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 15px;
+    line-height: 1.9;
+}
+
+.kontak a {
+    color: #d44281;
+    text-decoration: none;
+}
+
+.pembayaran {
+    background: #ffd6e7;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 2;
+}
+
+footer {
+    background: #ed80aa;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media(max-width:600px) {
+    .produk {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .kartu img {
+        height: 140px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px;
+    }
+
+    .checkout {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧸 TOKO BONEKA TRIYANA ♡</h1>
+    <p>Boneka Lucu, Bikin Hari Lebih Ceria!</p>
+</header>
+
+<nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#produk">Produk</a>
+    <a href="#keranjang">Keranjang</a>
+    <a href="#checkout">Checkout</a>
+    <a href="#kontak">Kontak</a>
+</nav>
+
+<section class="hero" id="beranda">
+    <h1>Selamat Datang di Toko Boneka Triyana</h1>
+    <p>Temukan boneka lucu dan menggemaskan di sini!</p>
+    <a href="#produk">
+        <button>Belanja Sekarang ♡</button>
+    </a>
+</section>
+
+<h2 id="produk">♡ PRODUK KAMI ♡</h2>
+
+<section class="produk">
+
+    <div class="kartu">
+        <img src="teddy bear coklat.jpg" alt="Boneka Teddy Bear">
+        <h3>Boneka Teddy Bear</h3>
+        <p>Rp150.000</p>
+        <button onclick="tambah('Boneka Teddy Bear')">Masukkan Keranjang</button>
+    </div>
+
+    <div class="kartu">
+        <img src="teddy pink.jpg" alt="Boneka Teddy Pink">
+        <h3>Boneka Teddy Pink</h3>
+        <p>Rp75.000</p>
+        <button onclick="tambah('Boneka Teddy Pink')">Masukkan Keranjang</button>
+    </div>
+
+    <div class="kartu">
+        <img src="panda.jpg" alt="Boneka Panda">
+        <h3>Boneka Panda</h3>
+        <p>Rp80.000</p>
+        <button onclick="tambah('Boneka Panda')">Masukkan Keranjang</button>
+    </div>
+
+    <div class="kartu">
+        <img src="stitch.jpg" alt="Boneka Stitch">
+        <h3>Boneka Stitch</h3>
+        <p>Rp70.000</p>
+        <button onclick="tambah('Boneka Stitch')">Masukkan Keranjang</button>
+    </div>
+
+    <div class="kartu">
+        <img src="hello kitty.jpg" alt="Boneka Hello Kitty">
+        <h3>Boneka Hello Kitty</h3>
+        <p>Rp90.000</p>
+        <button onclick="tambah('Boneka Hello Kitty')">Masukkan Keranjang</button>
+    </div>
+
+    <div class="kartu">
+        <img src="bebek.jpg" alt="Boneka Bebek">
+        <h3>Boneka Bebek</h3>
+        <p>Rp85.000</p>
+        <button onclick="tambah('Boneka Bebek')">Masukkan Keranjang</button>
+    </div>
+
+    <div class="kartu">
+        <img src="kelinci.jpg" alt="Boneka Kelinci">
+        <h3>Boneka Kelinci</h3>
+        <p>Rp75.000</p>
+        <button onclick="tambah('Boneka Kelinci')">Masukkan Keranjang</button>
+    </div>
+
+    <div class="kartu">
+        <img src="dino.jpg" alt="Boneka Dino">
+        <h3>Boneka Dino</h3>
+        <p>Rp70.000</p>
+        <button onclick="tambah('Boneka Dino')">Masukkan Keranjang</button>
+    </div>
+
+    <div class="kartu">
+        <img src="sapi.jpg" alt="Boneka Sapi">
+        <h3>Boneka Sapi</h3>
+        <p>Rp85.000</p>
+        <button onclick="tambah('Boneka Sapi')">Masukkan Keranjang</button>
+    </div>
+
+</section>
+
+<!-- KERANJANG BELANJA -->
+
+<section id="keranjang">
+    <h2>🛒 Keranjang Belanja</h2>
+
+    <ul id="daftar">
+        <li>Belum ada produk yang dipilih.</li>
+    </ul>
+
+    <p><b id="jumlah">Jumlah produk: 0</b></p>
+
+    <button onclick="hapusSemua()">Kosongkan Keranjang</button>
+    <button onclick="keCheckout()">Lanjut Checkout ♡</button>
+</section>
+
+<!-- CHECKOUT -->
+
+<section class="checkout" id="checkout">
+
+    <h2>♡ Checkout / Pemesanan ♡</h2>
+
+    <h3>Keranjang Belanja</h3>
+
+    <ul id="daftar-checkout">
+        <li>Belum ada produk yang dipilih.</li>
+    </ul>
+
+    <h3 id="total">Total: Harga dikonfirmasi penjual</h3>
+
+    <hr>
+
+    <h3>Data Pembeli</h3>
+
+    <input
+        type="text"
+        id="nama"
+        placeholder="Masukkan nama lengkap"
+        required>
+
+    <textarea
+        id="alamat"
+        placeholder="Masukkan alamat pengiriman"
+        required></textarea>
+
+    <input
+        type="tel"
+        id="telepon"
+        placeholder="Masukkan nomor WhatsApp"
+        required>
+
+    <h3>Pilih Metode Pembayaran</h3>
+
+    <select id="pembayaran" required>
+        <option value="">-- Pilih Pembayaran --</option>
+        <option value="DANA">DANA</option>
+        <option value="OVO">OVO</option>
+        <option value="GoPay">GoPay</option>
+        <option value="Transfer Bank">Transfer Bank</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="checkout()">
+        Buat Pesanan ♡
+    </button>
+
+</section>
+
+<!-- KONTAK -->
+
+<section class="kontak" id="kontak">
+
+    <h2>♡ KONTAK KAMI ♡</h2>
+
+    <p><b>Nama:</b> Triyana dina puspita</p>
+
+    <p><b>WhatsApp:</b>
+    <a href="https://wa.me/6283176054850">
+    +62 831-7605-4850</a></p>
+
+    <p><b>Instagram:</b>
+    <a href="https://instagram.com/triyanadinapuspita_">
+    @triyanadinapuspita_</a></p>
+
+    <p><b>TikTok:</b>
+    <a href="https://www.tiktok.com/@triyanadina12">
+    @triyanadina12</a></p>
+
+    <p><b>Email:</b>
+    <a href="mailto:triyanadinap@gmail.com">
+    triyanadinap@gmail.com</a></p>
+
+    <p><b>Alamat:</b>
+    Kab. Pemalang, Kec. Ulujami,
+    Ds. Limbangan, Dk. Karang Rejo,
+    RT 03 RW 07</p>
+
+</section>
+
+<!-- METODE PEMBAYARAN -->
+
+<section class="pembayaran">
+
+    <h2>♡ METODE PEMBAYARAN ♡</h2>
+
+    <h3>💙 DANA</h3>
+    <h3>💜 OVO</h3>
+    <h3>💙 GoPay</h3>
+    <h3>🏦 Transfer Bank</h3>
+
+    <p>Pembayaran dikonfirmasi langsung kepada penjual.</p>
+
+</section>
+
+<footer>
+    <h3>Terima Kasih Sudah Berkunjung ♡</h3>
+    <p>Toko Boneka Triyana</p>
+    <p>© 2026 Toko Boneka Triyana</p>
+</footer>
+
+<script>
+
+let keranjang = [];
+
+function tambah(nama) {
+
+    keranjang.push(nama);
+
+    tampilkan();
+
+    alert(nama + " berhasil dimasukkan ke keranjang!");
+}
+
+function tampilkan() {
+
+    let daftar = document.getElementById("daftar");
+    let daftarCheckout = document.getElementById("daftar-checkout");
+
+    daftar.innerHTML = "";
+    daftarCheckout.innerHTML = "";
+
+    if (keranjang.length === 0) {
+
+        daftar.innerHTML = "<li>Belum ada produk yang dipilih.</li>";
+
+        daftarCheckout.innerHTML = "<li>Belum ada produk yang dipilih.</li>";
+
+    } else {
+
+        keranjang.forEach((item, index) => {
+
+            daftar.innerHTML +=
+            "<li>" + item +
+            " <button onclick='hapus(" + index + ")'>Hapus</button></li>";
+
+            daftarCheckout.innerHTML +=
+            "<li>" + item + "</li>";
+
+        });
+
+    }
+
+    document.getElementById("jumlah").innerHTML =
+    "Jumlah produk: " + keranjang.length;
+
+}
+
+function hapus(index) {
+
+    keranjang.splice(index, 1);
+
+    tampilkan();
+
+}
+
+function hapusSemua() {
+
+    if (keranjang.length === 0) {
+        alert("Keranjang sudah kosong!");
+        return;
+    }
+
+    keranjang = [];
+
+    tampilkan();
+
+    alert("Keranjang berhasil dikosongkan!");
+
+}
+
+function keCheckout() {
+
+    if (keranjang.length === 0) {
+        alert("Silakan pilih boneka terlebih dahulu!");
+        return;
+    }
+
+    document.getElementById("checkout").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+function checkout() {
+
+    if (keranjang.length === 0) {
+        alert("Keranjang masih kosong!");
+        return;
+    }
+
+    let nama = document.getElementById("nama").value.trim();
+    let alamat = document.getElementById("alamat").value.trim();
+    let telepon = document.getElementById("telepon").value.trim();
+    let pembayaran = document.getElementById("pembayaran").value;
+
+    if (!nama || !alamat || !telepon || !pembayaran) {
+        alert("Mohon lengkapi semua data pembeli!");
+        return;
+    }
+
+    let isi = "HALO TOKO BONEKA TRIYANA 🧸%0A";
+    isi += "SAYA INGIN MEMESAN BONEKA%0A%0A";
+
+    isi += "Nama: " + encodeURIComponent(nama) + "%0A";
+    isi += "Alamat: " + encodeURIComponent(alamat) + "%0A";
+    isi += "Nomor WhatsApp: " + encodeURIComponent(telepon) + "%0A";
+    isi += "Metode Pembayaran: " + encodeURIComponent(pembayaran) + "%0A%0A";
+
+    isi += "DAFTAR PESANAN:%0A";
+
+    keranjang.forEach((item, index) => {
+
+        isi += (index + 1) + ". " +
+        encodeURIComponent(item) + "%0A";
+
+    });
+
+    isi += "%0AJumlah produk: " + keranjang.length;
+    isi += "%0AMohon konfirmasi harga dan ongkir.";
+    isi += "%0ATerima kasih ♡";
+
+    window.open(
+        "https://wa.me/6283176054850?text=" + isi,
+        "_blank"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
